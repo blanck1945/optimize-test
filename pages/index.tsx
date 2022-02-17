@@ -13,7 +13,7 @@ declare global {
 }
 
 const Home: NextPage = () => {
-  const [variantState, setVariantState] = useState(null);
+  const [variantState, setVariantState] = useState(99);
 
   useEffect(() => {
     const init = async () => {
@@ -31,18 +31,26 @@ const Home: NextPage = () => {
       }, 100);
     };
     init();
-  }, []);
+  }, [variantState]);
 
+  const getVariantState = () => {
+    switch (variantState) {
+      case 1:
+        return <a href="https://web.pency.app/">Pency</a>;
+      case 2:
+        return <a href="https://auntap.com/">Tap</a>;
+      default:
+        return <span>Loading...</span>;
+    }
+  };
+
+  console.warn({ variantState });
   return (
     <div className={styles.container}>
       <div>
         <h3>Home page</h3>
         <span>Variant:{variantState}</span>
-        {variantState === 1 ? (
-          <a href="https://web.pency.app/">Pency</a>
-        ) : (
-          <a href="https://auntap.com/">Tap</a>
-        )}
+        <div style={{ marginTop: "2rem" }}>{getVariantState()}</div>
       </div>
     </div>
   );
