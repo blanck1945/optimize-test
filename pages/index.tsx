@@ -4,6 +4,13 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
 
+declare global {
+  interface Window {
+    google_optimize?: any;
+    datalayer?: any;
+  }
+}
+
 const Home: NextPage = () => {
   if (typeof window !== "undefined") {
     const variant = window?.google_optimize?.get("QJQgAdWsSCGtmmONfJQq8w");
