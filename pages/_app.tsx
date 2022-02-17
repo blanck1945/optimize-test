@@ -2,9 +2,16 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
+import { useEffect } from "react";
+import ReactGa from 'react-ga'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
+
+    useEffect(() => {
+      ReactGa.initialize('G-0XTEX6VKZF');
+    },[])
+
+    return (
     <div>
       <Head>
         <title>Create Next App</title>
