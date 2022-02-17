@@ -13,7 +13,7 @@ declare global {
 }
 
 const Home: NextPage = () => {
-  const [variantState, setVariantState] = useState(99);
+  const [variantState, setVariantState] = useState('99');
 
   useEffect(() => {
     const init = async () => {
@@ -35,9 +35,9 @@ const Home: NextPage = () => {
 
   const getVariantState = () => {
     switch (variantState) {
-      case 1:
+      case '0':
         return <a href="https://web.pency.app/">Pency</a>;
-      case 2:
+      case '1':
         return <a href="https://auntap.com/">Tap</a>;
       default:
         return <span>Loading...</span>;
