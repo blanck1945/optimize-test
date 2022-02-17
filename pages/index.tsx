@@ -13,7 +13,7 @@ declare global {
 
 const Home: NextPage = () => {
   if (typeof window !== "undefined") {
-    const variant = window?.google_optimize?.get("QJQgAdWsSCGtmmONfJQq8w");
+    const variant = window?.google_optimize?.get("452Cf3ggRXayHKYKfNA-Eg");
     // Client-side-only code
     console.warn({ variant });
   }
