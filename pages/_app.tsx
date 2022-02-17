@@ -23,6 +23,20 @@ function MyApp({ Component, pageProps }: AppProps) {
         strategy="afterInteractive"
         src="https://www.googleoptimize.com/optimize.js?id=OPT-5KVFPFT"
       ></Script>
+       <Script
+            id='GA4'
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0XTEX6VKZF', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
       <Component {...pageProps} />
     </div>
   );
